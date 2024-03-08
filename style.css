@@ -3,19 +3,31 @@ body{
     display: flex;
     background-color:rgb(186, 73, 73);
     color: white;
+    text-align: center;
 }
 
 .container{
-    height: 93vh;
-    width: 60vh;
+    height: 670px;
+    width: 430px;
     background-color: rgba(255, 255, 255, 0.1);
     margin: 20px;
     border-radius: 5px;
     overflow-y: scroll;
     text-align: center;
 }
+.container::-webkit-scrollbar{
+    background-color: rgb(157, 157, 157);
+    width: 10px;
+    border-radius: 5px;
+}
+
+.container::-webkit-scrollbar-thumb{
+    border-radius: 5px;
+    background-color: rgb(255, 204, 204);
+}
+
 .container h2{
-    height: 40px;
+    height: 30px;
 }
 .rnds{
     text-align: center;
@@ -76,8 +88,8 @@ h3{
     transform: translate(-10%,-50%);
 }
 .box{
-    height: 55vh;
-    width: 85vh;
+    height: 400px;
+    width: 600px;
     background-color: rgba(255, 255, 255, 0.1);
     position: absolute;
     top: 50%;
@@ -113,6 +125,7 @@ h3{
     color: white;
     border: 1px solid white;
     font-size: 18px;
+    flex: 1 1 50%;
 }
 .start:hover{
     background-color: #198754;
@@ -134,4 +147,68 @@ h3{
     background-color:#0dcaf0;
     transition: 0.2s ease;
     border:0;
+}
+
+@media all and (max-width:1200px ) {
+    .container{
+        position: absolute;
+        top: 85%;
+        left: 50%;
+        transform: translate(-50%,-10%);
+    }
+    h3{
+        position: absolute;
+        top: 2%;
+        left: 50%;
+        transform: translate(-50%,-10%);
+   }
+    .box{
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+  }
+@media all and (max-width:600px) {
+    .box{
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 80%;
+        height: 300px;
+    }
+    .container{
+        width: 95%;
+        margin: 10px;
+    }
+    .time{
+        height: 30px;
+        width: fit-content;
+        font-size: 30px;
+    }
+    .btns{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        bottom: 10%;
+    }
+    .headname{
+        width: 80%;
+        font-size: 30px;
+    }
+    .btns{
+        height: 100px;
+        width: 80%;
+        position: absolute;
+        top: 65%;
+        place-items: center;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+    .btns button {
+        height: 35px;
+        width: 80px;
+    }
 }
